@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  ecommers-backend:
+    build:
+      context: ./backend # Adjust this to your backend directory
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "8080:8080" # Map host port 3080 to container port 8080
+
+  ecommers-frontend:
+    build:
+      context: ./e-commers # Adjust this to your frontend directory
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000" # Map host port 3000 to container port 3000

@@ -1,0 +1,397 @@
+
+
+/*////////////////////////////////////////////*/
+/* Navbar.css                                */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure navbar spans the full width */
+  position: fixed; /* Fix navbar at the top of the viewport */
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+  z-index: 1000; /* Ensure navbar is above other content */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
+  height: 10vh;
+}
+
+.navbar.transparent {
+  background-color: rgba(255, 255, 255, 0); /* Fully transparent */
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 20px; /* Adjust the logo size as needed */
+  font-weight: bold;
+}
+
+.navbar-item, .icon {
+  position: relative; /* Required for the underline animation */
+  margin: 0 15px; /* Uniform spacing */
+  font-size: 18px; /* Adjust based on your design */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon {
+  font-size: 24px; /* Adjust the icon size */
+  color: #333; /* Adjust the icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin: 0 30px; /* Adjusted spacing */
+}
+
+.navbar-item::after, .icon::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  margin: auto; /* Center the line */
+  width: 0%; /* Start with no line */
+  height: 2px; /* Thickness of the underline */
+  background-color: black; /* Color of the underline */
+  transition: width 0.3s ease; /* Animate the width change */
+}
+
+.navbar-item:hover::after, .icon:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      margin: 20px 0; /* Adjusted for consistency */
+  }
+
+  .navbar-logo, .navbar-section {
+      flex-basis: 100%;
+      justify-content: center;
+      display: flex;
+  }
+
+  .navbar-logo {
+      order: 0;
+      margin-bottom: 20px;
+  }
+}
+
+/* /////////////////////////////////////////// */
+
+
+
+/* WelcomeSection.css */
+.welcome-section {
+  align-self: stretch;
+  height: 100vh;
+  padding-top: 20px;
+
+  background: linear-gradient(270deg, #90cbce, #ba99ba, #8db9b9, #8d728d);
+  background-size: 400% 400%;
+  animation: GradientAnimation 15s ease infinite;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+  color: white; /* Adjust text color based on your preference */
+}
+
+@keyframes GradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.welcome-content {
+  align-self: stretch;
+  flex: 1 1 0;
+  padding: 32px 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  display: flex;
+}
+
+.welcome-content h1, .welcome-content h2, .welcome-content p {
+  margin: 0; /* Remove default margins */
+}
+
+.discover-more {
+  padding: 19px 23px;
+  border: 1px solid white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background: none;
+  color: white;
+  font-family: sans-serif; /* Adjust as needed */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for background and text color */
+}
+
+.discover-more:hover {
+  background-color: #2d2f30; /* Example hover background color */
+  color: #fff; /* Adjust text color on hover as needed */
+}
+
+
+/*////////////////////////////////////////////*/
+
+/* FeatureSection.css */
+.feature-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 116px;
+  padding: 150px 80px;
+}
+
+.feature-image {
+  flex: 1 1 0;
+  height: 530px;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 53px;
+}
+
+.feature-title h4 {
+  color: #333;
+  font-size: 14px;
+  font-family: 'Arimo Hebrew Subset', sans-serif;
+  margin: 0;
+}
+
+.feature-title h2 {
+  color: #333;
+  font-size: 30px;
+  font-family: 'Zapf Humanist 601', sans-serif;
+  margin: 0;
+}
+
+.feature-content p {
+  color: #333;
+  font-size: 16px;
+  font-family: 'Arimo Hebrew Subset', sans-serif;
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 19px 23px;
+  border: 1px solid #CDCBC0;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for background and text color */
+}
+
+.read-more span {
+  font-size: 14px;
+}
+
+.read-more:hover {
+  background-color: black; /* Example hover background color */
+  color: #fff; /* Adjust text color on hover as needed */
+}
+
+
+/*////////////////////////////////////////////*/
+
+
+.product-item {
+  width: 45vh; /* Fixed width for consistency */
+  display: flex;
+  flex-direction: column;
+  background: #fff; /* Card background */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure all content fits within the rounded corners */
+  margin-bottom: 10vh;
+}
+
+.product-image {
+  height: 288px; /* Fixed height */
+  background-size: cover;
+  background-position: center; /* Center the background image */
+}
+
+.tag {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 5px; /* Rounded tag edges */
+}
+
+.product-details, h3, p {
+  padding: 16px; /* Padding inside the card for text */
+  text-align: center; /* Center text */
+}
+
+h3 {
+  margin-top: 12px; /* Space between image and title */
+}
+
+
+
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center slides horizontally */
+}
+
+/* Custom scrollbar for slick list for better visual integration */
+.slick-list {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 #f0f0f0; /* For Firefox */
+}
+
+.slick-list::-webkit-scrollbar {
+  height: 8px; /* For Chrome, Safari, and Opera */
+}
+
+.slick-list::-webkit-scrollbar-track {
+  background: #f0f0f0; /* For Chrome, Safari, and Opera */
+}
+
+.slick-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* For Chrome, Safari, and Opera */
+  border-radius: 10px;
+}
+
+
+.all-products-arrow {
+  font-size: 16px; /* Adjust as needed */
+  color: black; /* Example color - adjust as needed */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  display: inline-flex; /* Use flexbox for alignment */
+  align-items: center; /* Center the text and arrow vertically */
+  gap: 8px; /* Space between text and arrow symbol */
+  font-weight: bold; /* Optional: makes the text bold */
+}
+
+.all-products-arrow::after {
+  content: '→'; /* Unicode arrow symbol */
+  font-size: 20px; /* Slightly larger arrow for emphasis */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .slide-padding {
+    padding: 0 10px; /* Smaller padding on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .slide-padding {
+    padding: 0 5px; /* Even smaller padding for mobile screens */
+  }
+}
+
+
+
+
+
+/*////////////////////////////////////////////*/
+/* Footer.css */
+
+.footer-sections {
+  background-color: #333333;
+  color: #CDCBC0;
+  padding: 20px;
+  font-family: 'Arimo Hebrew Subset', sans-serif;
+  margin-top: 20vh;
+  height: 30vh;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo-social, .footer-products, .footer-services, .footer-contact {
+  flex: 1;
+  min-width: 200px; /* Ensures the layout adjusts nicely on smaller screens */
+}
+
+.logo {
+  margin-bottom: 15px;
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.footer-products h4, .footer-services h4, .footer-contact h4 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* You can also directly target the Font Awesome icons */
+.fa-svg-icon {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.social-media {
+  display: flex; /* Aligns the child elements (icons) in a row */
+  align-items: center; /* Centers the icons vertically within the container */
+  gap: 10px; /* Adjust as needed to space out the icons */
+  margin-top: 1vh;
+  padding: 1vh;
+}
+
+.social-link {
+  color: #CDCBC0; /* Icon color */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-link:hover {
+  color: #ffffff; /* Icon hover color for a bit of interaction feedback */
+}
+
+/* Adjustments for the icon size, if necessary */
+.fa-svg-icon {
+  width: 44px; /* Example size, adjust as needed */
+  height: auto;
+}
