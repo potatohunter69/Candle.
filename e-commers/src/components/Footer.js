@@ -12,7 +12,6 @@ function FooterWithSections() {
       <div className="footer-container">
         <div className="footer-logo-social">
           <div className="logo">Candle.</div>
-          <span>Follow us on:</span>
           <div className="social-media">
            
             <a href="https://instagram.com" className="social-link">

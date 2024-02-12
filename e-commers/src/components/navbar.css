@@ -1,0 +1,132 @@
+/* Existing navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 10vh;
+    padding: 0 20px; /* Add some padding on the sides */
+  }
+  
+  .navbar.transparent {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .navbar-section, .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10vh;
+    text-align: center;
+  }
+  
+
+ .navbar-item, .icon {
+  position: relative; /* Required for the underline animation */
+  margin: 0 15px; /* Uniform spacing */
+  font-size: 18px; /* Adjust based on your design */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon {
+    font-size: 3vh; /* Adjust the icon size */
+    color: #333; /* Adjust the icon color */
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-right:  5vh; /* Adjusted spacing */
+  }
+
+  .navbar-item::after, .icon::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    margin: auto; /* Center the line */
+    width: 0%; /* Start with no line */
+    height: 3px; /* Thickness of the underline */
+    background-color: black; /* Color of the underline */
+    transition: width 0.3s ease; /* Animate the width change */
+    border-radius: 20ps;
+  }
+
+  .navbar-item:hover::after, .icon:hover::after {
+    width: 100%; /* Full width on hover */
+  }
+  
+  
+  /* Styles for the menu icon */
+  .menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 24px; /* Adjust the icon size */
+    cursor: pointer;
+  }
+  
+  /* Hide menu items and show the menu icon on smaller screens */
+  @media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed; /* Use fixed to cover the entire screen */
+        top: 0;
+        left: 0;
+        height: 100vh; /* Full screen height */
+        width: 100%; /* Full screen width */
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        align-items: center; /* Center menu items horizontally */
+        justify-content: center; /* Center menu items vertically */
+        z-index: 1001; /* Ensure it's above other content */
+        font-size: 40px;
+      }
+  
+    .menu.open {
+      display: flex; /* Show the menu when it's open */
+    }
+  
+    .menu-icon {
+        display: block;
+        z-index: 1002; /* Ensure menu icon is above the menu */
+      }
+    .icon{
+        font-size: 4vh;
+    }
+
+    .User{
+        display: none;
+    }
+    
+    .navbar-logo {
+       margin-right: 0vh;
+       margin-left: 7vh;
+      }
+
+     .navbar-item{
+        font-size: 1.5rem; /* Example larger font size */
+        font-weight: bold; /* Example bold font weight */
+        padding: 20px; /* Example larger padding */
+        color: white;
+        
+      }
+
+      .navbar-item:hover{
+        color: #333;
+      }
+      
+      .navbar-item::after, .icon::after {
+        background-color: transparent; /* No underline */   
+      }
+     
+  }
+  
+  /* Additional responsive adjustments as needed */
+  

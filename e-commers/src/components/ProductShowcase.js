@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 function ProductShowcase() {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ function ProductShowcase() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -48,7 +49,7 @@ function ProductShowcase() {
             <div className="product-item">
               <div
                 className="product-image"
-                style={{ backgroundImage: `url(${product.image})` }}
+                style={{ backgroundColor: "lightgrey" }}
               />
               <h3>{product.name}</h3>
               <p>{product.description}</p>
@@ -60,7 +61,9 @@ function ProductShowcase() {
           </div>
         ))}
       </Slider>
-      <div className="all-products-arrow">All Products</div>
+      <Link to="/shop" className="link-no-style">
+            <span className="navbar-item">All Products →</span>
+          </Link>
     </div>
   );
 }
