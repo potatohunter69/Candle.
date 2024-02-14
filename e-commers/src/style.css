@@ -4,123 +4,16 @@
 
 /* WelcomeSection.css */
 /* Keyframes for animations */
-@keyframes GradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Welcome Section - Base styles and animations */
-.welcome-section {
-  display: flex;
-  flex-direction: column; /* Stacks content vertically on smaller screens */
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  background: linear-gradient(270deg, #eae8e8, #f1cccc, #f7f0f0, #fad3d3);
-  background-size: 400% 400%;
-  animation: GradientAnimation 15s ease infinite;
-}
-
-.read-more{
-  display: none;
-}
-
 
 
 /* Adjustments for content and animations */
-.welcome-content {
-  margin-top: 50px;
-  text-align: center;
-  animation: fadeIn 2s ease-out;
-}
-
-.welcome-content.scroll-in-view h1, 
-.welcome-content.scroll-in-view h2, 
-.welcome-content.scroll-in-view p {
-  animation: slideInFromLeft 1s ease-out forwards;
-}
 
 
 /* Responsive adjustments */
-@media (max-width: 600x) {
-  video {
-    display: none; /* Hide video on small devices */
-  }
-  .read-more{
-    display: block;
-  }
-}
-
-@media (min-width: 1500px) {
-  /* Adjust layout for larger screens */
-  .welcome-section {
-    flex-direction: row; /* Side-by-side layout for content and video */
-    justify-content: space-between; /* Ensures content and video are spaced evenly */
-    align-items: center; /* Vertically centers content within the section */
-    padding: 0 80px; /* Adds padding on the sides for larger screens */
-  }
-
-  .feature-section {
-    display: flex;
-    width: 100%; /* Full width to accommodate side-by-side layout */
-    justify-content: space-between; /* Aligns content and video on opposite ends */
-  }
-
-  .welcome-content, .feature-content {
-    max-width: 50%; /* Limits width to half of the container for balanced layout */
-    text-align: left; /* Aligns text to the left for readability and design consistency */
-  }
-
-  video {
-    
-    margin: 0; /* Adjusts margin for proper alignment */
-    width: 50%; /* Setds video to occupy half of the section's width */
-  }
-
-  .read-more{
-    display: block;
-  }
-  
-
-  /* Align all texts to the left for larger devices */
-  .welcome-content h1, 
-  .welcome-content h2, 
-  .welcome-content p,
-  .read-more {
-    text-align: center; /* Left-aligns text for larger screens */
-  }
-}
 
 
 
-.read-more {
-  /* Allows margin auto to work for horizontal centering */
-  margin: auto ; /* Vertically space out from content and horizontally center */
-  padding: 10px 15px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 20px;
-  margin-top: 20px; 
-  cursor: pointer;
-  text-align: center; /* Ensures text inside the button is centered, if needed */
-}
 
-.read-more:hover {
-  background-color: #333; /* Darker on hover */
-}
 
 /*////////////////////////////////////////////*/
 
@@ -134,7 +27,7 @@
   flex-direction: column; /* Stack vertically on smaller screens */
   align-items: center; /* Center-align items for small screens */
   text-align: center; /* Center-align text for small screens */
-  height: 80vh;
+  height: 60vh;
   margin-top: 20vh;
 
 }
@@ -142,12 +35,12 @@
 
 
 .fea-image {
-  margin-Top: 20vh;
-  width:1000px;
+
+  width:600px;
   height: auto;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
   display: block;
-  margin: 0 auto;
+
   border-radius: 50px;
 
 }
@@ -168,14 +61,16 @@
 }
 
 /* Media Query for Larger Screens */
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
   .feat-section {
     flex-direction: row; /* Lay out horizontally for larger screens */
     align-items: flex-start; /* Align items to the start of the flex container */
     text-align: left; /* Align text to the left for larger screens */
     justify-content: left; /* Center the content within the container */
-    margin: 20vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
     height: 55vh;
+    margin-top: 20vh;
   }
 
   .feat-title h4, .feat-title h2, .feat-content p {
@@ -201,32 +96,7 @@
 
 
 
-.product-item {
-  width: 45vh; /* Fixed width for consistency */
-  display: flex;
-  flex-direction: column;
-  background: #fff; /* Card background */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-  border-radius: 10px; /* Rounded corners */
-  overflow: hidden; /* Ensure all content fits within the rounded corners */
-  margin-bottom: 10vh;
-}
 
-.product-image {
-  height: 288px; /* Fixed height */
-  background-size: cover;
-  background-position: center; /* Center the background image */
-}
-
-.tag {
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  padding: 4px 8px;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  border-radius: 5px; /* Rounded tag edges */
-}
 
 .product-details, h3, p {
   padding: 16px; /* Padding inside the card for text */
@@ -237,31 +107,19 @@ h3 {
   margin-top: 12px; /* Space between image and title */
 }
 
-
-
-
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .product-item {
-    max-width: 80%; /* Adjust max-width for medium screens */
-  }
+.like-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3vh;
 }
 
-@media (max-width: 768px) {
-  .product-item {
-    max-width: 90%; /* Adjust max-width for small screens */
-
-  }
-  .all-products-arrow{
-    display: none;
-  }
-
-  .navbar-item {
-    display: none;
-  }
+.liked {
+  color: black; /* Change as needed */
 }
-
 
 
 
@@ -274,6 +132,7 @@ h3 {
   padding: 20px;
   font-family: 'Arimo Hebrew Subset', sans-serif;
   margin-top: 20vh;
+  width: 100%;
 }
 
 .footer-container {
@@ -308,7 +167,17 @@ h3 {
   color: #ffffff;
 }
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center; /* Center-align the children */
+    justify-content: center; /* Center along the main axis */
+  }
 
+  /* Hide elements except for social media icons and copyright */
+  
+}
 
 .footer-logo-social .logo, .footer-products, .footer-services, .footer-contact {
   display: none;
@@ -326,3 +195,36 @@ h3 {
   text-decoration: none;
   color: inherit;
 }
+
+
+
+
+.footer-quote {
+  display: flex;
+  background-color: #f0f0f0; /* Light grey background */
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  bottom: 0;
+  width: 100%;
+  height: 30vh;
+}
+
+.quote-text {
+  font-style: italic;
+  color: #333; /* Dark grey text */
+  margin: 0;
+  font-size: 16px;
+  margin-left: 15vh;
+  margin-right: 15vh;
+}
+
+.quote-author {
+  color: #666; /* Lighter grey for the author */
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+

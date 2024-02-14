@@ -1,54 +1,50 @@
 import React, { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import featureVideo from "../assets/candle.mov"; // Assuming you have a video file
+import featureVideo from "../assets/creame.mov";
+import featureVideoSmall from "../assets/small.mov"; // Assuming a smaller version for small screens
+import "./welcomeSection.css"; // Import the CSS file
+import { Link } from "react-router-dom";
 
 function WelcomeSection() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
-  const [showVideo, setShowVideo] = useState(window.innerWidth > 767);
+  // State to hold the current video source
+  const [videoSrc, setVideoSrc] = useState(featureVideo);
 
+  // Function to update the video source based on screen width
+  const updateVideoSource = () => {
+    if (window.innerWidth <= 800) {
+      // Example breakpoint at 800px
+      setVideoSrc(featureVideoSmall);
+    } else {
+      setVideoSrc(featureVideo);
+    }
+  };
+
+  // useEffect to handle component mount and window resize events
   useEffect(() => {
-    const handleResize = () => {
-      setShowVideo(window.innerWidth > 767);
-    };
+    // Update video source on mount
+    updateVideoSource();
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    // Add event listener for window resize
+    window.addEventListener("resize", updateVideoSource);
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener("resize", updateVideoSource);
+  }, []); // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
   return (
-    <div className="welcome-section" ref={ref}>
-      <div className="feature-section">
-        <div className="feature-content">
-          <div className={`welcome-content ${inView ? "scroll-in-view" : ""}`}>
-            <h1>Welcome!</h1>
-            <h2>Highly Effective Body Care</h2>
-            <p>
-              A combination of nature and advanced technology. Vegan, natural,
-              skin-friendly, and rich in effective biotechnological ingredients.
-            </p>
-            <button className="read-more">Discover More</button>
-          </div>
-        </div>
-        {showVideo && (
-          <video
-            style={{
-              marginTop: "20px",
-              width: "auto",
-              height: "400px",
-              boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.5)",
-              display: "block",
-              margin: "0 auto",
-              borderRadius: "50px",
-            }}
-            src={featureVideo}
-            autoPlay
-            loop
-            muted
-          />
-        )}
+    <div className="welcome-section">
+      <video
+        className="welcome-section-video"
+        src={videoSrc}
+        autoPlay
+        loop
+        muted
+      ></video>
+      <div className="content">
+        <h1>LAR's</h1>
+        <p>Explore our services and offerings.</p>
+        <Link to="/shop">
+          <button className="read-mor">Discover More</button>
+        </Link>
       </div>
     </div>
   );

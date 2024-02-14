@@ -1,0 +1,65 @@
+/* ContactForm.css */
+.contact-form-container {
+    display: flex;
+  
+
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: auto;
+    height: 100vh;
+    align-items: center;
+   
+  }
+  
+  .contact-form {
+   width: 100%;
+    flex-direction: column;
+  }
+  
+  .form-field {
+
+    margin-bottom: 20px;
+  }
+  
+  .form-field input
+   {
+    width: 100%;
+    height: 5vh;
+    padding: 10px;
+    font-size: large;
+   
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .form-field textarea {
+    padding: 20px;
+    width: 100%;
+    height: 20vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+
+  .error-message {
+    color: #D8000C; /* Red color for attention, but less aggressive */
+    background-color: #FFD2D2; /* Light red background */
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-left: 5px solid #D8000C; /* Solid line to the left for emphasis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    animation: fadeIn 0.5s ease-in-out; /* Animation for the error message */
+  }
+  
+  /* Keyframes for fadeIn animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ContactInfo.css */
+
+  
+  

@@ -8,7 +8,7 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - "8080:8080" # Map host port 3080 to container port 8080
+      - "8080:8080" # Map host port 8080 to container port 8080
 
   ecommers-frontend:
     build:
@@ -16,5 +16,7 @@ services:
       dockerfile: Dockerfile
     environment:
       NODE_ENV: production
+    depends_on:
+      - ecommers-backend
     ports:
       - "3000:3000" # Map host port 3000 to container port 3000

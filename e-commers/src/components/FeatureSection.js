@@ -1,5 +1,6 @@
 import React from "react";
 import featureImg from "../assets/feat.png";
+import { Link } from "react-router-dom";
 
 function FeatureSection() {
   return (
@@ -27,9 +28,20 @@ function FeatureSection() {
           Discover products tailored for mature skin and urban lifestyles,
           offering daily hydration and the added advantage of powerful vitamins
           and antioxidants.
+          Discover products tailored for mature skin and urban lifestyles,
+          offering daily hydration and the added advantage of powerful vitamins
+          and antioxidants.
+          Discover products tailored for mature skin and urban lifestyles,
+          offering daily hydration and the added advantage of powerful vitamins
+          and antioxidants.
+          Discover products tailored for mature skin and urban lifestyles,
+          offering daily hydration and the added advantage of powerful vitamins
+          and antioxidants.
         </p>
         <div className="read-mor">
-          <span>Read More</span>
+          <Link to="/about" className="link-no-style">
+            <span>Read More</span>
+          </Link>
         </div>
       </div>
     </div>

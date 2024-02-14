@@ -1,0 +1,68 @@
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(223, 206, 206); /* Light background for a softer look */
+  z-index: 9999;
+  color: #8a97a0; /* Soft grey for text */
+  transition: opacity 0.5s ease;
+}
+
+.loading-overlay.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.loading-spinner {
+  border: 5px solid #f3f3f3; /* Light grey border */
+  border-top: 5px solid rgb(198, 189, 189); /* Soft blue for a refreshing feel */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 20px;
+  font-size: 30px; /* Default font size for large screens */
+  color: black; /* Matching the text color with the theme */
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loading-spinner {
+    width: 40px; /* Smaller spinner for tablets */
+    height: 40px;
+  }
+  
+  .loading-text {
+    font-size: 20px; /* Smaller text for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-spinner {
+    width: 30px; /* Even smaller spinner for phones */
+    height: 30px;
+  }
+  
+  .loading-text {
+    font-size: 16px; /* Smaller text for phones */
+  }
+}

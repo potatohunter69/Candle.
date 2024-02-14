@@ -24,7 +24,7 @@
   }
   
   .navbar-logo {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin-right: 10vh;
     text-align: center;
@@ -34,13 +34,13 @@
  .navbar-item, .icon {
   position: relative; /* Required for the underline animation */
   margin: 0 15px; /* Uniform spacing */
-  font-size: 18px; /* Adjust based on your design */
+  font-size: 21px; /* Adjust based on your design */
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .icon {
-    font-size: 3vh; /* Adjust the icon size */
+    font-size: 4vh; /* Adjust the icon size */
     color: #333; /* Adjust the icon color */
     transition: transform 0.3s ease, color 0.3s ease;
     margin-right:  5vh; /* Adjusted spacing */

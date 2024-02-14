@@ -3,6 +3,7 @@ import { MdOutlineSearch } from "react-icons/md";
 import { FiHeart, FiUser, FiShoppingBag, FiMenu } from "react-icons/fi"; // Import FiMenu for the hamburger icon
 import { Link } from "react-router-dom";
 import "./navbar.css";
+import navbar from "react-bootstrap/Navbar";
 
 const Navbar = () => {
   const [transparent, setTransparent] = useState(true);
@@ -28,8 +29,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar ${transparent ? "transparent" : ""}`}>
-      <div className="navbar-section"  onClick={toggleMenu}>
+    <navbar className={`navbar ${transparent ? "transparent" : ""}`}>
+      <div className="navbar-section" onClick={toggleMenu}>
         <FiMenu className="menu-icon" onClick={toggleMenu} />{" "}
         {/* Hamburger icon */}
         <div className={`menu ${isMenuOpen ? "open" : ""}`}>
@@ -38,26 +39,31 @@ const Navbar = () => {
           <Link to="/shop" className="link-no-style">
             <span className="navbar-item">Products</span>
           </Link>
-          <span className="navbar-item">About</span>
-          <span className="navbar-item">Contact</span>
+          <Link to="/about" className="link-no-style">
+            <span className="navbar-item">About</span>
+          </Link>
+          <Link to="/contact" className="link-no-style">
+            <span className="navbar-item">Contact</span>
+          </Link>
         </div>
       </div>
 
-      <Link to="/" className="link-no-style">
-        <div className="navbar-logo">Candle.</div>
-      </Link>
+      <navbar.Brand href="/" className="link-no-style">
+        <div className="navbar-logo">LAR's</div>
+      </navbar.Brand>
 
       <div className="navbar-section">
-        <span className="icon heart">
-          <FiHeart />
-        </span>
+        <Link to="/liked" className="link-no-style">
+          <span className="icon heart">
+            <FiHeart />
+          </span>
+        </Link>
 
-       
         <span className="icon">
           <FiShoppingBag />
         </span>
       </div>
-    </div>
+    </navbar>
   );
 };
 
