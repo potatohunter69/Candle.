@@ -108,6 +108,22 @@ app.post("/products/:id/toggle-like", async (req, res) => {
   }
 });
 
+
+app.get("/products/:id/is-liked", async (req, res) => {
+  const { id } = req.params;
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+
+  try {
+    const like = await Like.findOne({ productId: id, ip: ip });
+    res.json({ isLiked: !!like });
+  } catch (err) {
+    console.error("Error checking if product is liked:", err);
+    res.status(500).send("Error checking if product is liked");
+  }
+});
+
+
+
 app.get("/liked-products", async (req, res) => {
   const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
   const cacheKey = `liked-products:${ip}`;
