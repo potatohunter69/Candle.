@@ -1,34 +1,17 @@
 
 
-
-
-/* WelcomeSection.css */
-/* Keyframes for animations */
-
-
-/* Adjustments for content and animations */
-
-
-/* Responsive adjustments */
-
-
-
-
-
-/*////////////////////////////////////////////*/
-
-/* FeatureSection.css */
-
-
 /* Feature Section Styles */
 .feat-section {
   display: flex;
-  padding: auto;
   flex-direction: column; /* Stack vertically on smaller screens */
   align-items: center; /* Center-align items for small screens */
   text-align: center; /* Center-align text for small screens */
   height: 60vh;
-  margin-top: 20vh;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 100%;
 
 }
 
@@ -40,7 +23,6 @@
   height: auto;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
   display: block;
-
   border-radius: 50px;
 
 }
@@ -60,8 +42,9 @@
   background-color: #333; /* Darker shade on hover for visual feedback */
 }
 
+
 /* Media Query for Larger Screens */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .feat-section {
     flex-direction: row; /* Lay out horizontally for larger screens */
     align-items: flex-start; /* Align items to the start of the flex container */
@@ -70,7 +53,6 @@
     margin-left: 15vh;
     margin-right: 15vh;
     height: 55vh;
-    margin-top: 20vh;
   }
 
   .feat-title h4, .feat-title h2, .feat-content p {
@@ -91,35 +73,18 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .feat-section {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+}
+
 
 /*////////////////////////////////////////////*/
 
 
 
-
-
-.product-details, h3, p {
-  padding: 16px; /* Padding inside the card for text */
-  text-align: center; /* Center text */
-}
-
-h3 {
-  margin-top: 12px; /* Space between image and title */
-}
-
-.like-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 3vh;
-}
-
-.liked {
-  color: black; /* Change as needed */
-}
 
 
 
@@ -130,23 +95,15 @@ h3 {
   background-color: #333333;
   color: #CDCBC0;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: 'Arimo Hebrew Subset', sans-serif;
   margin-top: 20vh;
   width: 100%;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between; /* Adjusted in media query for smaller screens */
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%; /* Ensure it takes full width */
-}
-
-.footer-logo-social, .footer-products, .footer-services, .footer-contact {
-  flex: 1;
-  min-width: 200px; /* Adjusts layout on smaller screens */
-}
 
 .social-media {
   display: flex;
@@ -156,6 +113,7 @@ h3 {
   margin-top: 1vh;
   padding: 1vh;
   width: 100%; /* Ensure it takes full width */
+  font-size: 2vh;
 }
 
 .social-link {
@@ -167,37 +125,40 @@ h3 {
   color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center; /* Center-align the children */
-    justify-content: center; /* Center along the main axis */
-  }
-
-  /* Hide elements except for social media icons and copyright */
-  
-}
-
-.footer-logo-social .logo, .footer-products, .footer-services, .footer-contact {
-  display: none;
-}
 
 .footer-copyright {
   text-align: center;
-  margin-top: 40px;
   font-size: 0.875rem;
   width: 100%; /* Ensure it spans the full width */
   order: 3; /* Keep it at the bottom */
 }
 
-.link-no-style, .link-no-style:visited, .link-no-style:hover, .link-no-style:active, .link-no-style:focus {
-  text-decoration: none;
-  color: inherit;
+
+
+.payment-methods {
+  display: flex;
+  justify-content: center; /* Center the payment method icons */
+  align-items: center;
+  gap: 10px;
+  margin-top: 1vh;
+  padding: 1vh;
+  width: 100%; /* Ensure it takes full width */
+  font-size: 3vh;
+
+}
+
+.payment-link {
+  color: #CDCBC0; /* Match your existing styling */
+  transition: color 0.3s ease;
+}
+
+.payment-link:hover {
+  color: #ffffff; /* Match your existing hover effect */
 }
 
 
 
+/* Footer Quote Section */
 
 .footer-quote {
   display: flex;

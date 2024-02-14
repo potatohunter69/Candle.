@@ -15,7 +15,7 @@ const Loading = () => {
   return (
     <div className={`loading-overlay ${loading ? 'active' : ''}`}>
       <div className="loading-spinner"></div>
-      <p className="loading-text">LAR's</p>
+      <p className="loading-text" style={{margin:"15px"}}>LAR's</p>
     </div>
   );
 };

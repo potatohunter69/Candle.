@@ -1,0 +1,73 @@
+.Likedcontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    font-family: 'Arial', sans-serif; /* Modern, readable font */
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding: 10%;
+    padding-top: 0%;
+  }
+
+  .Likedheader{
+    margin-bottom: 0s;
+    font-size: 100px;
+    color: #333; /* Dark gray for contrast */
+    text-align: left !important; /* Center-align the title */
+    margin-left: 0%;
+  }
+  
+  h2 {
+    color: #333; /* Dark gray for contrast */
+    text-align: center; /* Center-align the title */
+    margin-bottom: 20px; /* Space between title and content */
+  }
+  
+  p {
+    color: #666; /* Lighter gray for informational text */
+    text-align: center; /* Center-align loading/error messages */
+    margin-bottom: 20px; /* Consistent spacing */
+  }
+  
+  /* ItemCard specific styles */
+  .ItemCard {
+
+    border: 1px solid #e1e1e1; /* Subtle border */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions for hover */
+  }
+  
+  .ItemCard:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  }
+  
+  .Likedgrid {
+    align-content: center;
+    align-items: center;
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Initially set to 3 items per row */
+   
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .Likedgrid {
+      grid-template-columns: repeat(2, 1fr); /* Adjust to 2 items per row on medium screens */
+    }
+    .Likedcontainer{
+        margin-top: 20%;
+        
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Likedgrid {
+      grid-template-columns: 1fr; /* Adjust to 1 item per row on small screens */
+    }
+  }
+  
+
+  

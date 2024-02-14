@@ -39,97 +39,7 @@
     max-height: 90vh; /* Adjust based on your layout, ensures scrolling within the container */
   }
   
-  .productItem {
-    position: relative;
-    background: #ffffff; /* Clean white background */
-    border: 1px solid #e1e1e1; /* Lighter border for a softer look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Softer, more spread shadow for depth */
-    border-radius: 20px; /* Rounded corners */
-   
-    width: 30%; /* Fixed width */
-  
-    height: 60%; /* Auto height to accommodate content */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
 
-  .product-image {
-    width: calc(100% + 32px); /* Extend to cover padding */
-    height: 100%; /* Fixed height */
-    margin: -16px; /* Adjust margin to offset the padding */
-    background-size: cover;
-    background-position: center;
-    border-top-left-radius: 8px; /* Rounded corners on the top */
-    border-top-right-radius: 8px;
-  }
-  
-  h3 {
-    margin: 12px 0 6px; /* Adjust spacing */
-    font-size: 1.25rem; /* Larger font size */
-    font-weight: 600; /* Bolder */
-  }
-  
-  p {
-    font-size: 0.9rem; /* Adjust font size for description */
-    color: #666; /* Lighter text color for less contrast */
-    text-align: center;
-    margin: 0 0 12px; /* Adjust spacing */
-  }
-  
-  .product-details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 0.9rem; /* Adjust font size for details */
-    color: #333; /* Darker color for emphasis */
-  }
-  
-  .product-details span {
-    background: #f2f2f2; /* Background color for detail tags */
-    padding: 4px 8px; /* Padding for tags */
-    border-radius: 4px; /* Rounded corners for tags */
-  }
-  
-  @media (max-width: 768px) {
-    .searchSection {
-      order: -1; /* Move search section to the top */
-      width: 100%; /* Make search section full width */
-      border-right: none; /* Remove border-right if previously set */
-    }
-
-    .searchInput {
-      width: 80%; /* Adjust width for better responsiveness */
-    }
-    
-   .categorySection{
-     margin-right: 10vh;
-   }
-   
-   
-    .containers {
-      margin: 10vh;
-      align-items: center;
-      flex-direction: column; /* Stack the search and display sections vertically */
-    }
-  
-    .productDisplaySection {
-      width: 100%; /* Ensure product display section takes full width */
-      align-self: center;
-      align-items: center;
-    
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .productItem {
-      width: 100%; /* Full width on small screens */
-    }
-  }
 
 
   /* Category Section */
@@ -159,4 +69,40 @@
   transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
+
+
+/* Ensure your ItemCard component's root element does not exceed 100% width */
+
+
+@media (max-width: 768px) {
+  .searchSection {
+    order: -1; /* Move search section to the top */
+    width: 100%; /* Make search section full width */
+    border-right: none; /* Remove border-right if previously set */
+  }
+
+  .searchInput {
+    width: 80%; /* Adjust width for better responsiveness */
+  }
+  
+ .categorySection{
+   margin-right: 10vh;
+ }
+ 
+ 
+  .containers {
+    margin: 10vh;
+    align-items: center;
+    flex-direction: column; /* Stack the search and display sections vertically */
+  }
+
+  .productDisplaySection {
+    width: 100%; /* Ensure product display section takes full width */
+    align-self: center;
+    align-items: center;
+  
+  }
+
+
+}
 

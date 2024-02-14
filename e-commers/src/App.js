@@ -41,11 +41,11 @@ function App() {
           <Route
             path="/"
             element={
-              <>
+              <div style={{ display: "block" ,maxWidth: "100%"}}>
                 <WelcomeSection />
                 <FeatureSection />
                 <ProductShowcase />
-              </>
+              </div>
             }
           />
           {/* Redirect or navigate example, if needed:

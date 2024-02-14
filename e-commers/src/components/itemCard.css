@@ -1,0 +1,90 @@
+.productItem {
+  background-color: #fff;
+  border: 1px solid #e1e1e1; /* Light gray border for definition */
+  border-radius: 10px; /* Rounded corners for modern feel */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content for a clean look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+  cursor: pointer;
+  height: auto;
+}
+
+.productItem:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow for emphasis */
+}
+
+.product-image {
+  width: 100%;
+  height: 300px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensure images cover the area nicely */
+  border-top-left-radius: 10px; /* Rounded corners at the top */
+  border-top-right-radius: 10px;
+}
+
+.product-details {
+  padding: 20px;
+  text-align: center; /* Center text for focus */
+}
+
+.product-details h3 {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: bold; /* Bold for emphasis */
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  font-size: 0.9rem;
+  color: #666; /* Subtle for descriptions */
+  margin-bottom: 15px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .productItem {
+    max-width: 90%; /* Adjust width for smaller screens */
+    margin: 10%;
+    margin-top: 20%;
+  }
+
+  .product-image {
+    height: 200px; /* Smaller images on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details h3 {
+    font-size: 1rem; /* Adjust text size for very small screens */
+  }
+
+  .product-details p {
+    font-size: 0.8rem;
+  }
+}
+
+.likeButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.likeButton.liked svg {
+  fill: #E74C3C; /* Fills the SVG for liked state */
+}
+
+.likeButton svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.likeButton:hover svg {
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}

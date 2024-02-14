@@ -4,50 +4,44 @@ import {
   faInstagram,
   faFacebook,
   faTwitter,
+  faCcVisa,
+  faApplePay,
+  faCcPaypal,
+  faGooglePay,
+  faCcMastercard,
 } from "@fortawesome/free-brands-svg-icons";
 
 function FooterWithSections() {
   return (
     <footer className="footer-sections">
-      <div className="footer-container">
-        <div className="footer-logo-social">
-          <div className="logo">Candle.</div>
-          <div className="social-media">
-           
-            <a href="https://instagram.com" className="social-link">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://facebook.com" className="social-link">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://twitter.com" className="social-link">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-          </div>
+      <div className="social-link">Candle.</div>
+      <div className="footer-logo-social">
+        <div className="social-media">
+          <a href="https://instagram.com" className="social-link">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="https://facebook.com" className="social-link">
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a href="https://twitter.com" className="social-link">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
         </div>
-        <div className="footer-products">
-          <h4>Products</h4>
-          <ul>
-            <li>Product Category 1</li>
-            <li>Product Category 2</li>
-            <li>Product Category 3</li>
-          </ul>
-        </div>
-        <div className="footer-services">
-          <h4>Services</h4>
-          <ul>
-            <li>Service 1</li>
-            <li>Service 2</li>
-            <li>Service 3</li>
-          </ul>
-        </div>
-        <div className="footer-contact">
-          <h4>Contact</h4>
-          <ul>
-            <li>Email: contact@example.com</li>
-            <li>Phone: +123 456 7890</li>
-            <li>Address: 123 Address St, City</li>
-          </ul>
+        {/* Payment Icons Section */}
+        <div className="payment-methods">
+          <a href="#" className="payment-link">
+            <FontAwesomeIcon icon={faCcVisa} />
+          </a>
+          <a href="#" className="payment-link">
+            <FontAwesomeIcon icon={faCcPaypal} />
+          </a>
+         
+          <a href="#" className="payment-link">
+            <FontAwesomeIcon icon={faGooglePay} />
+          </a>
+          <a href="#" className="payment-link">
+            <FontAwesomeIcon icon={faApplePay} />
+          </a>
         </div>
       </div>
       <div className="footer-copyright">

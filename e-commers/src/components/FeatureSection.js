@@ -14,7 +14,7 @@ function FeatureSection() {
           boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.5)",
           display: "block",
           margin: "0 auto",
-          borderRadius: "50px",
+          borderRadius: "30px",
         }}
         src={featureImg}
         alt="Feature"
@@ -34,7 +34,7 @@ function FeatureSection() {
           Discover products tailored for mature skin and urban lifestyles,
           offering daily hydration and the added advantage of powerful vitamins
           and antioxidants.
-          Discover products tailored for mature skin and urban lifestyles,
+           Discover products tailored for mature skin and urban lifestyles,
           offering daily hydration and the added advantage of powerful vitamins
           and antioxidants.
         </p>

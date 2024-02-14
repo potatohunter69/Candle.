@@ -130,3 +130,9 @@
   
   /* Additional responsive adjustments as needed */
   
+
+  .link-no-style, .link-no-style:visited, .link-no-style:hover, .link-no-style:active, .link-no-style:focus {
+    text-decoration: none;
+    color: inherit;
+  }
+  
